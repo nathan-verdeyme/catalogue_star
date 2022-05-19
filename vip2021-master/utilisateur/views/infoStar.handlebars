@@ -1,0 +1,14 @@
+
+<div class = tabPhoto>
+{{#each info}}
+
+<img src="/images/vip/{{this.photo_star}}" class = "photo" >
+
+  nom : {{this.VIP_NOM}} {{this.VIP_PRENOM}}
+  Date de naissance : {{this.VIP_NAISSANCE}}
+  Nationalité : {{this.nationalite_nom}}
+  Mariages(s): {{this.VIP_VIP_NOM}} ({{this.DATE_EVENEMENT}}-->{{this.MARIAGE_FIN}}) lieu : {{this.MARIAGE_LIEU}}
+  liaison(s): {{this.VIP_NOM}} ({{this.DATE_EVENEMENT}}) raison fin liaison:{{this.LIAISON_MOTIFFIN}}
+  Qui suis-je ? : {{this.vip_texte}}
+{{/each}}
+</div>

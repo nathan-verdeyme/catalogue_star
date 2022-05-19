@@ -1,0 +1,63 @@
+<h1>{{> letterList}}</h1>
+{{#if vips}}
+    <div style="display : flex; flex-wrap : wrap; justify-content : space-around;">
+        {{#each vips}}
+            <div style="display : flex; flex-direction : column; margin-top : 50px;">
+                <img width="150px" height="200px" style="object-fit: cover;" src="/images/vip/{{this.PHOTO_ADRESSE}}" alt="Photo de {{this.VIP_PRENOM}} {{this.VIP_NOM}}" />
+                <a href="/repertoire/{{this.firstLett}}/{{this.VIP_NUM}}">{{this.VIP_PRENOM}} {{this.VIP_NOM}}</a>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}
+{{#if vipInfos}}
+    <div class="float">
+        <img src="/images/vip/{{vipInfos.PHOTO_ADRESSE}}" alt="Photo de {{vipInfos.VIP_PRENOM}} {{vipInfos.VIP_NOM}}"/>
+            <b>Nom : </b> {{vipInfos.VIP_PRENOM}} {{vipInfos.VIP_NOM}} <br/>
+            <b>Date de naissance : </b>{{formatDate vipInfos.date_naissance "dddd D MMMM yyyy"}}<br/>
+            <b>Nationalité : </b>{{vipInfos.Nationalite}}<br/>
+            {{#if professions}}
+                {{#each professions}}
+                    <b>Profession : </b>{{this.pro_nom}}<br/>
+                    <b>Principal(aux) {{this.pro_action}}(s) : </b>{{#ifCond this.pro_principal '===' "film"}}
+                        {{#each ../films}}
+                            {{this.FILM_TITRE}} ({{formatDate this.FILMDATEREALISATION "MMMM yyyy"}}) De <a href="{{this.real_num}}" class="vip" data-src="/images/vip/{{this.real_photo}}" data-desc="{{this.real_desc}}">{{this.real_pre}} {{this.real_nom}}</a> <br/>
+                        {{/each}}
+                    {{/ifCond}}
+                    {{#ifCond this.pro_principal '===' "defile"}}
+                        {{#each  ../defile}}
+                            {{this.DEFILE_LIEU}} ({{formatDate this.DEFILE_DATE "MMMM yyyy"}}) de <a href="{{this.cout_num}}" class="vip" data-src="/images/vip/{{this.cout_photo}}" data-desc="{{this.cout_desc}}">{{this.cout_pre}} {{this.cout_nom}}</a> <br/>
+                        {{/each}}
+                    {{/ifCond}}
+                    {{#ifCond this.pro_principal '===' "chanson"}}
+                        {{#each ../albums}}
+                            {{this.ALBUM_TITRE}} ({{formatDate this.ALBUM_DATE "MMMM yyyy"}}) {{this.MAISONDISQUE_NOM}}<br/>
+                        {{/each}}
+                    {{/ifCond}}
+                    <br/>
+                {{/each}}
+            {{/if}}
+            {{#if mariages}}
+                <b>Mariage(s) : </b>
+                {{#each mariages}}
+                    <a href="{{this.conj_num}}" class="vip" data-src="/images/vip/{{this.conj_photo}}" data-desc="{{this.conj_desc}}">{{this.conj_pre}} {{this.conj_nom}}</a> ({{formatDate this.DATE_EVENEMENT 'MMMM yyyy'}} {{#if this.MARIAGE_FIN}}
+                    ---> {{formatDate this.MARIAGE_FIN 'MMMM yyyy'}}
+                {{/if}}) <b>lieu :</b> {{this.MARIAGE_LIEU}} <br/>
+                {{/each}}
+                <br/>
+            {{/if}}
+            {{#if liaisons}}
+            <b>Liaison(s) : </b>
+                {{#each liaisons}}
+                    <a href="{{this.conj_num}}" class="vip" data-src="/images/vip/{{this.conj_photo}}" data-desc="{{this.conj_desc}}">{{this.conj_pre}} {{this.conj_nom}}</a> ({{formatDate this.DATE_EVENEMENT 'MMMM yyyy'}}) <b>raison fin liaison :</b> {{this.LIAISON_MOTIFFIN}} <br/>
+                {{/each}}
+                <br/>
+            {{/if}}
+            <b>Qui suis-je ? : </b>{{vipInfos.VIP_TEXTE}}<br/>
+    </div>
+    <div class="break"></div>
+            {{#if images}}
+                {{#each images}}
+                    <a href="/images/vip/{{this.PHOTO_ADRESSE}}" data-lightbox="vip" title="{{this.PHOTO_SUJET}} - {{this.PHOTO_COMMENTAIRE}}"><img src="/images/vip/{{this.PHOTO_ADRESSE}}" alt="{{this.PHOTO_SUJET}} - {{this.PHOTO_COMMENTAIRE}}" width="10%"/></a>
+                {{/each}}
+            {{/if}}
+{{/if}}

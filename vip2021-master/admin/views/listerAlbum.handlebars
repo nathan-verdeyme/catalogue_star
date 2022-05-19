@@ -1,0 +1,14 @@
+<h1> Mettre ici l'album photo des stars </h1>
+{{>ListPhotoAlb}}
+{{#each commentPhoto}}
+{{#if commentPhoto}}
+<p> {{this.VIP_NOM}} {{this.VIP_PRENOM}}</p>
+<img src="/public/images/vip/{{tis.PHOTO_ADRESSE}}" alt="imageAlb">
+<Legend>Commentaires</legend>
+  <p> {{#if this.PHOTO_COMMENTAIRE}}
+      {{this.PHOTO_COMMENTAIRE}}
+      {{#else}}
+      <p> pas de Commentaires</p>
+      {{/if}}
+    </p>
+    {{/each}}

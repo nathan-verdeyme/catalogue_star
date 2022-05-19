@@ -1,0 +1,16 @@
+{{>ListVipArt}}
+
+<div class="contenuArticle">
+    {{#each article}}
+    <fieldset>
+        <legend>Article</legend>
+        <p class="nomVipArticle">{{this.VIP_PRENOM}} {{this.VIP_NOM}}</p>
+      
+        <p>{{this.ARTICLE_RESUME}}</p>
+
+        <p class="gris">[Ajouté le {{formatDate this.ARTICLE_DATE_INSERT  'D MMMM YYYY' }}]
+            <a href="/repertoire/{{this.letter}}/{{this.VIP_NUMERO}}" >voir sa fiche</a>
+            </p>
+    </fieldset>
+    {{/each}}
+</div>

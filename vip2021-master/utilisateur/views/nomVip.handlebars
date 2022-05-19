@@ -1,0 +1,11 @@
+{{>repLettre}}
+<div class = tabPhoto>
+{{#each photo_star}}
+
+  <img src="/images/vip/{{this.photo_star}}" class = "photo" >
+
+  <div class = "nom">
+    <a href = "/repertoireDetail/{{this.VIP_NUMERO}}">{{this.vip_nom}} {{this.vip_prenom}}</a>
+  </div>
+{{/each}}
+</div>

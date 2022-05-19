@@ -1,0 +1,12 @@
+<div  class="tableNomVip">
+  <table>
+    <tr class="imgArtVip">
+      <th><img class= "imgArtVip" src="/images/vips.png"  alt="art"></th>
+    </tr>
+    {{#each vipListe}}
+    <tr>
+      <td><a href="/articles/{{this.VIP_NUMERO}}">{{this.VIP_PRENOM}} {{this.VIP_NOM}}</a></td>
+    </tr>
+    {{/each}}
+  </table>
+</div>

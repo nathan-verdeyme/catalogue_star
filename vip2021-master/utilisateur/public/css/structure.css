@@ -1,0 +1,147 @@
+body {
+    font-family: "Segoe UI", "DejaVu Sans",Verdana, sans-serif;
+    background-image:-webkit-linear-gradient(#9f0909, #4e0000);
+    background-image:-o-linear-gradient(#9f0909, #4e0000);
+    background-image:linear-gradient(#9f0909, #4e0000);
+    background-size: 1rem 200rem;
+    font-size:0.8em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000000;
+}
+.monBody #container {
+    width: 1300px;
+    margin: 0 auto;
+    background:#ffffff;
+}
+.monBody #header {
+    height:140px;
+    background-color:#000;
+    color:#fff;
+}
+
+.menu_haut {background-color:#000;color:#fff;margin-top:-13px;width:100%;}
+.menu_haut ul {
+	width:100%;
+	text-align:center;
+	height:30px;
+	margin-left:-50px;
+	margin-right:-50px;
+	}
+.menu_haut li {
+	text-decoration:none;
+	font-weight:bold;
+	display:inline;
+	font-size:14px;
+	padding:10px 10px 10px 10px;
+	color:#fff;
+	}
+.menu_haut li a {
+	color: #fff;
+	text-decoration: none;
+	display: inline;
+	height: 100%;
+	border: 0 none;
+}
+.menu_haut li a:hover {
+	color:#000;
+	background:#eee;
+}
+
+.monBody #contenu {
+    padding:20px;
+    overflow: auto;
+}
+.monBody #footer {
+    padding: 0 10px;
+    font-size:0.8em;
+    text-align:center;
+    height:150px;
+    background:url(/image/footer.jpg) no-repeat;
+}
+.baniere{float:left;
+  margin-top:20px;
+  margin-left:5px;
+  border:none;}
+.baniere img{
+  border:none;
+}
+
+#LogoNode {
+    max-height: 20%;
+    max-width: 20%;
+}
+
+a  {
+    text-decoration:none;
+    color:#0072ff;
+}
+
+.traitVertical {
+  border-left: 1px white solid;
+}
+.float {
+    display: inline-block;
+    float: left;
+    width: 65%;
+    text-align: left;
+}
+.break {
+    clear: both;
+}
+.nom{
+  text-align: bottom;
+}
+.tabPhoto{
+  display: inline-block;
+}
+.photo{
+  width: 150px;
+	height: auto;
+}
+.tableNomVip {
+  float: right;
+  border: 1px black solid;
+  border-radius: 10px;
+  width:  inherit;
+  text-decoration: underline;
+}
+.tableNomVip a{
+    color: black;
+    font-weight: bold;
+}
+.imgArtVip img{
+  background-color: black;
+  border-radius: 10px;
+  border-top: 0px;
+  width: 100%;
+
+}
+.contenuArticle{
+  text-align:  left;
+  width: inherit;
+
+}
+
+.nomVipArticle{
+  text-align: left;
+  text-decoration: underline;
+  font-weight:  bold;
+
+}
+.contenuArticle{
+  float: left;
+  width: 85%;
+}
+.gris{
+       background-color: #d3d8df;
+   }
+.gris p{
+  float: left;
+}
+.gris a {
+       color: black;
+       float: right;
+       text-decoration: underline;
+}
